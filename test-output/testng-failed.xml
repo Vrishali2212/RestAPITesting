@@ -5,7 +5,6 @@
     <classes>
       <class name="com.restTests.simpleTests.TekarchAPIMethods">
         <methods>
-          <include name="deleteUser"/>
           <include name="loginToTekarchAPI"/>
           <include name="beforeclass"/>
         </methods>

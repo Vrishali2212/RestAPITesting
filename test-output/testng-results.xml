@@ -2,36 +2,36 @@
 <testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-26T17:38:42 PDT" name="Default suite" finished-at="2023-06-26T17:38:53 PDT" duration-ms="11319">
+  <suite started-at="2023-06-26T19:12:07 PDT" name="Default suite" finished-at="2023-06-26T19:12:27 PDT" duration-ms="19746">
     <groups>
     </groups>
-    <test started-at="2023-06-26T17:38:42 PDT" name="Default test" finished-at="2023-06-26T17:38:53 PDT" duration-ms="11319">
-      <class name="com.restTests.simpleTests.TekarchAPIMethods">
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.restTests.simpleTests.TekarchAPIMethods@2fb3536e]" started-at="2023-06-26T17:38:42 PDT" name="beforeclass" finished-at="2023-06-26T17:38:43 PDT" duration-ms="781" status="PASS">
+    <test started-at="2023-06-26T19:12:07 PDT" name="Default test" finished-at="2023-06-26T19:12:27 PDT" duration-ms="19746">
+      <class name="com.restTests.simpleTests.TekarchAPIEndToEnd">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.restTests.simpleTests.TekarchAPIEndToEnd@2fb3536e]" started-at="2023-06-26T19:12:07 PDT" name="beforeclass" finished-at="2023-06-26T19:12:08 PDT" duration-ms="812" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeclass -->
-        <test-method signature="loginToTekarchAPI()[pri:0, instance:com.restTests.simpleTests.TekarchAPIMethods@2fb3536e]" started-at="2023-06-26T17:38:43 PDT" name="loginToTekarchAPI" finished-at="2023-06-26T17:38:45 PDT" duration-ms="2413" status="PASS">
+        <test-method signature="loginToTekarchAPI()[pri:0, instance:com.restTests.simpleTests.TekarchAPIEndToEnd@2fb3536e]" started-at="2023-06-26T19:12:08 PDT" name="loginToTekarchAPI" finished-at="2023-06-26T19:12:10 PDT" duration-ms="2349" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToTekarchAPI -->
-        <test-method signature="createUser()[pri:0, instance:com.restTests.simpleTests.TekarchAPIMethods@2fb3536e]" started-at="2023-06-26T17:38:45 PDT" name="createUser" finished-at="2023-06-26T17:38:46 PDT" depends-on-methods="com.restTests.simpleTests.TekarchAPIMethods.loginToTekarchAPI" duration-ms="622" status="PASS">
+        <test-method signature="createUser()[pri:0, instance:com.restTests.simpleTests.TekarchAPIEndToEnd@2fb3536e]" started-at="2023-06-26T19:12:10 PDT" name="createUser" finished-at="2023-06-26T19:12:13 PDT" depends-on-methods="com.restTests.simpleTests.TekarchAPIEndToEnd.loginToTekarchAPI" duration-ms="2916" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUser -->
-        <test-method signature="deleteUser()[pri:0, instance:com.restTests.simpleTests.TekarchAPIMethods@2fb3536e]" started-at="2023-06-26T17:38:46 PDT" name="deleteUser" finished-at="2023-06-26T17:38:46 PDT" depends-on-methods="com.restTests.simpleTests.TekarchAPIMethods.loginToTekarchAPI" duration-ms="511" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteUser -->
-        <test-method signature="getUsers()[pri:0, instance:com.restTests.simpleTests.TekarchAPIMethods@2fb3536e]" started-at="2023-06-26T17:38:46 PDT" name="getUsers" finished-at="2023-06-26T17:38:53 PDT" depends-on-methods="com.restTests.simpleTests.TekarchAPIMethods.loginToTekarchAPI" duration-ms="6564" status="PASS">
+        <test-method signature="getUsers()[pri:0, instance:com.restTests.simpleTests.TekarchAPIEndToEnd@2fb3536e]" started-at="2023-06-26T19:12:13 PDT" name="getUsers" finished-at="2023-06-26T19:12:26 PDT" depends-on-methods="com.restTests.simpleTests.TekarchAPIEndToEnd.loginToTekarchAPI" duration-ms="12900" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUsers -->
-        <test-method signature="updateUser()[pri:0, instance:com.restTests.simpleTests.TekarchAPIMethods@2fb3536e]" started-at="2023-06-26T17:38:53 PDT" name="updateUser" finished-at="2023-06-26T17:38:53 PDT" depends-on-methods="com.restTests.simpleTests.TekarchAPIMethods.loginToTekarchAPI" duration-ms="357" status="PASS">
+        <test-method signature="deleteUser()[pri:0, instance:com.restTests.simpleTests.TekarchAPIEndToEnd@2fb3536e]" started-at="2023-06-26T19:12:26 PDT" name="deleteUser" finished-at="2023-06-26T19:12:26 PDT" depends-on-methods="com.restTests.simpleTests.TekarchAPIEndToEnd.getUsers" duration-ms="356" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteUser -->
+        <test-method signature="updateUser()[pri:0, instance:com.restTests.simpleTests.TekarchAPIEndToEnd@2fb3536e]" started-at="2023-06-26T19:12:26 PDT" name="updateUser" finished-at="2023-06-26T19:12:27 PDT" depends-on-methods="com.restTests.simpleTests.TekarchAPIEndToEnd.getUsers" duration-ms="324" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateUser -->
-      </class> <!-- com.restTests.simpleTests.TekarchAPIMethods -->
+      </class> <!-- com.restTests.simpleTests.TekarchAPIEndToEnd -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
