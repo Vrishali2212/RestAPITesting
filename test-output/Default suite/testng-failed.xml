@@ -3,12 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.restTests.simpleTests.TekarchAPIMethods">
+      <class name="com.restTests.simpleTests.TekarchAPIEndToEnd">
         <methods>
-          <include name="loginToTekarchAPI"/>
+          <include name="getUsers"/>
+          <include name="updateUser"/>
           <include name="beforeclass"/>
+          <include name="loginToTekarchAPI"/>
+          <include name="createUser"/>
+          <include name="deleteUser"/>
         </methods>
-      </class> <!-- com.restTests.simpleTests.TekarchAPIMethods -->
+      </class> <!-- com.restTests.simpleTests.TekarchAPIEndToEnd -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

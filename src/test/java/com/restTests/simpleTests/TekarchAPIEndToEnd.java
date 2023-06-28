@@ -14,6 +14,7 @@ import com.restTests.POJOs.updateUserPOJO;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.http.Header;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 
 public class TekarchAPIEndToEnd {
@@ -26,7 +27,7 @@ public class TekarchAPIEndToEnd {
 	public void beforeclass() {
 		RestAssured.baseURI="https://us-central1-qa01-tekarch-accmanager.cloudfunctions.net/";
 	}
-	@Test
+	@Test (priority = 1)
 	public void loginToTekarchAPI () {
 		LoginDataPOJO logindata = new LoginDataPOJO();
 		logindata.setUsername("vrishali.bodhale@gmail.com");
@@ -44,6 +45,7 @@ public class TekarchAPIEndToEnd {
 		.contentType(ContentType.JSON) 
 		.time(Matchers.lessThan(3000L)) ; 
 		
+		response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("LoginToAPIResponseSchema.json")) ;		
 		response.prettyPrint();
 		
 		LoginResponsePOJO[] loginresponsepojolist = response.as(LoginResponsePOJO[].class);
@@ -60,7 +62,7 @@ public class TekarchAPIEndToEnd {
 	
 	
 	
-	@Test(dependsOnMethods = "loginToTekarchAPI")
+	@Test(dependsOnMethods = "loginToTekarchAPI",  priority = 2)
 	public void createUser() {
 		createUserPOJO newuser = new createUserPOJO(); 
 		newuser.setAccountno("TA-POST25") ; 
@@ -88,7 +90,7 @@ public class TekarchAPIEndToEnd {
 				
 	}
 	
-	@Test(dependsOnMethods = "loginToTekarchAPI")
+	@Test(dependsOnMethods = "loginToTekarchAPI" ,  priority = 3)
 	public void getUsers() {
 		Header reqheader = new Header("token" , extractedToken) ; 
 		Response response = RestAssured
@@ -98,6 +100,8 @@ public class TekarchAPIEndToEnd {
 		.get("getdata");
 		
 		response.then().contentType(ContentType.JSON).statusCode(200) ;
+		
+		response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("GetAllUserSchema.json"));
 	
 		 int noOfRecords = response.body().jsonPath().get("size()") ; 
 		 System.out.println("No. of Records = " + noOfRecords);
@@ -117,7 +121,7 @@ public class TekarchAPIEndToEnd {
 	}
 	
 	
-	@Test(dependsOnMethods = "getUsers")
+	@Test(dependsOnMethods = "getUsers" ,  priority = 4)
 	public void updateUser() {
 		updateUserPOJO updateuser = new updateUserPOJO();
 		updateuser.setAccountno(newuser.getAccountno());
@@ -151,7 +155,7 @@ public class TekarchAPIEndToEnd {
 	}
 	
 	
-	@Test(dependsOnMethods = "getUsers")
+	@Test(dependsOnMethods = "getUsers" ,  priority = 5)
 	public void deleteUser() {
 		
 		deleteUserPOJO deleteuser = new deleteUserPOJO();
